@@ -1,0 +1,18 @@
+<div class="border-2 m-2 border-green-300 p-2 flex flex-col gap-2">
+  <h2>All Products</h2>
+  <div class="border-2 flex justify-around">
+    <p>Id</p>
+    <p>Brand</p>
+    <p>Quantity</p>
+    <p>Price</p>
+  </div>
+  @for(product of products; track product.id){
+    <div class="flex  justify-around">
+      <p>{{product.id}}</p>
+      <p>{{product.brand}}</p>
+      <p>{{product.quantity}}</p>
+      <p>{{product.price}}</p>
+    </div>
+  }
+
+</div>

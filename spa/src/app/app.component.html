@@ -1,0 +1,13 @@
+<h1>Hello, spa</h1>
+<nav style="display: flex; gap: 5px;">
+  <h3  style="cursor: pointer;" routerLink="/">Home</h3>
+  <h3  style="cursor: pointer;" routerLink="/about">About</h3>
+  <h3  style="cursor: pointer;" routerLink="/register">Register</h3>
+</nav>
+
+<div>
+  <button (click)="changeRoute('')">Go to home</button>
+  <button (click)="changeRoute('about')">Go to about</button>
+  <button (click)="changeRoute('register')">Go to register</button>
+</div>
+<router-outlet></router-outlet>

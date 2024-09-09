@@ -1,0 +1,22 @@
+<div  class="border-2  border-red-400 p-4 h-full m-2 flex gap-2  justify-between">
+  <div>
+    <h1 class="mb-4 w-fit bg-red-50 p-1">Parent component</h1>
+    <h2>Parent Data</h2>
+    <div class="flex gap-2 mb-2">
+      <input type="text" class="border p-1" placeholder="enter name" [(ngModel)]="name">
+     <input type="number" class="border p-1" placeholder="enter age" [(ngModel)]="age">
+     <input type="text" class="border p-1" placeholder="enter status" [(ngModel)]="status">
+    </div>
+    <button class="border-2 bg-red-300 hover:bg-red-400 p-1 mb-1 rounded-md" (click)="transferData()">Send data to child</button>
+    <h2>Child Data</h2>
+    <div class="w-full bg-gray-300 flex h-24 mb-2 justify-evenly">
+        <p>{{parentData1}}</p>
+        <p>{{parentData2}}</p>
+        <p>{{parentData3}}</p>
+    </div>
+  </div>
+  <div>
+    <app-child (sendData)="childTriggered($event)" [name]="childData1" [age]="childData2" [status]="childData3"></app-child>
+  </div>
+</div>
+

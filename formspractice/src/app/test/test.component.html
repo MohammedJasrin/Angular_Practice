@@ -1,0 +1,12 @@
+<div class="grid grid-cols-3">
+  @for(product of products;track product.id){
+    <div class="border flex flex-col p-2 m-2 ">
+        <!-- <img src="{{product.image}}" class="h-1/2 w-full"> -->
+        <h4 style="color:rgb(7, 13, 37)" class="product-title">{{product.title}}</h4>
+        <p>Category: {{product.category|uppercase}}</p>
+        <p>{{product.description}}</p>
+        <p>Rating:{{product.rating.rate}}  <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <span style="color:grey;">({{product.rating.count}})</span></p>
+        <p>Price: {{product.price | currency:'INR'}}</p>
+    </div>
+  }
+</div>

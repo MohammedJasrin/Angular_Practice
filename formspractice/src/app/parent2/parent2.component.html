@@ -1,0 +1,11 @@
+<div class="p-2 border bg-red-50 ">
+  <h1>Parent Component</h1>
+  <div class="w-1/4 h-96 px-2 bg-gray-800 text-white mb-2">
+    <ul>
+      @for(todo of todoList;track todo){
+        <li>{{todo}}</li>
+      }
+    </ul>
+  </div>
+  <app-child2 (childEvent)="addToList($event)"></app-child2>
+</div>

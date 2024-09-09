@@ -1,0 +1,7 @@
+<input type="text" class="border border-black p-2 m-2" [(ngModel)]="title">
+<button class="border border-black m-2 p-2 bg-blue-100 rounded-md" (click)="toggle()">Pass to child</button>
+<!-- @if(isOpen){ -->
+  <div>
+    <app-lifecycle [title]="title">This <b>content</b> is injected from parent</app-lifecycle>
+  </div>
+<!-- } -->

@@ -1,0 +1,170 @@
+.filters{
+  background-color: #071c16;
+  margin:6px;
+  border-radius: 10px;
+
+
+}
+
+.product_search{
+  margin:5px;
+  padding:10px;
+  display:flex;
+  gap:10px;
+}
+
+
+.product_search>input{
+  padding:5px;
+  border-radius: 5px;
+  border:none;
+}
+
+.available_product_checkbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5px;
+  border-radius: 5px;
+  color:white;
+}
+
+.available_product-filter{
+  padding-top:5px;
+  margin-right:5px;
+  border:none;
+  outline:none;
+}
+
+.product_list{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:10px;
+  padding:10px;
+}
+
+@media (max-width: 768px) {
+
+  .product_search{
+    margin:5px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+
+
+  .product_list{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+    padding:10px;
+  }
+}
+
+.product{
+  border-radius:5px;
+  padding:5px;
+  background-color: #95d5b2;
+  display:flex;
+  flex-direction:column;
+}
+
+.product_details{
+  flex:1;
+}
+
+.checkout_actions{
+  display:flex;
+  gap:5px;
+  margin-top:2px;
+}
+
+.checkout_actions>button{
+  padding:10px;
+  border-radius: 5px;
+  border:none;
+  background-color: #fca311;
+}
+
+.checkout_actions>button:hover{
+  cursor: pointer;
+  background-color: #db8e13;
+}
+
+
+.item_qty_notify{
+  color:rgb(209, 12, 61);
+}
+
+.stock_sold{
+  background-color: red;
+  color:white;
+  text-align:center;
+}
+
+
+
+
+img{
+  height: 100px; /* Maintain aspect ratio */
+  border-bottom: 1px solid #ddd; /* Separator line below image */
+  margin-bottom: 12px; /* Space below image */
+  border-radius:5px;
+}
+
+.product-description,
+.product-rating,
+.product-price {
+  font-size: 0.9em; /* Slightly smaller font size */
+  color: #333; /* Dark gray text color */
+  margin: 8px 0; /* Space between paragraphs */
+}
+
+
+
+
+.rating-count {
+  color: grey; /* Gray color for rating count */
+}
+
+.product-price {
+  font-weight: bold; /* Bold price text */
+  color: #063f7d; /* Blue color for price */
+}
+
+
+
+/* cart */
+
+li{
+  list-style-type: none;
+  padding:10px;
+}
+
+
+li>a{
+  text-decoration:none;
+  color:white
+}
+
+.cart-icon i {
+  position: relative;
+  color:white;
+}
+
+.notification-bubble {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}

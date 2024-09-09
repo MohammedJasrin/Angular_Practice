@@ -1,0 +1,21 @@
+<div class="border-2 border-dashed border-blue-400   p-4 ">
+  <div>
+    <h1 class="mb-4 bg-red-50 w-fit p-1">Child component</h1>
+    <h2>Child Data</h2>
+    <div class="flex gap-4 mb-2">
+      <input type="text" class="border p-1" placeholder="enter name" [(ngModel)]="childData1">
+     <input type="number" class="border p-1" placeholder="enter age" [(ngModel)]="childData2">
+     <input type="text" class="border p-1" placeholder="enter status" [(ngModel)]="childData3">
+    </div>
+    <button class="border-2 bg-red-300 hover:bg-red-400 p-1 mb-1 rounded-md" (click)="transferData()">Send data to parent</button>
+  </div>
+  <h2>Parent Data:</h2>
+  <div class="w-full bg-gray-300 flex h-24 justify-evenly">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+    <p>{{status}}</p>
+  </div>
+
+
+
+</div>

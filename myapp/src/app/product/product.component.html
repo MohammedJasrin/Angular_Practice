@@ -1,0 +1,41 @@
+<div class="filters">
+  <div class="product_search">
+    <input type="text" (input)="updateProductSearch($event)" placeholder="Search for products"/>
+    <select (change)="updateProductSelectionFilter($event)">
+      <option value="">All</option>
+      <option value="electronics">Electronics</option>
+      <option value="jewelery">Jewelery</option>
+      <option value="clothing">Clothing</option>
+    </select>
+    <div class="available_product_checkbox">
+    <input type="checkbox" name="show_available" class="available_product-filter" (change)="updateProductAvailabilityFilter($event)"  id="show_available">
+    <label for="show_available">Show Available Products</label>
+    </div>
+  </div>
+</div>
+<h2 style="margin:10px;">{{filteredProducts.length}} products</h2>
+<div class="product_list">
+  @for(product of filteredProducts; track product.id){
+    <div class="product">
+      <div class="product_details">
+        <img src="{{product.image}}">
+        <h4 style="color:rgb(7, 13, 37)" class="product-title">{{product.title}}</h4>
+        <p class="product-category">Category: {{product.category|uppercase}}</p>
+        <p class="product-description">{{product.description}}</p>
+        <p class="product-rating">Rating:{{product.rating.rate}}  <i class="fa-solid fa-star" style="color: #FFD43B;"></i> <span style="color:grey;">({{product.rating.count}})</span></p>
+        <p class="product-price">Price: {{product.price | currency:'INR'}}</p>
+      </div>
+      @if(product.inStock){
+        @if(product.stockAvailable<10){
+          <p class="item_qty_notify">Hurry!! only {{product.stockAvailable}} left</p>
+        }
+        <div class="checkout_actions">
+          <button (click)="addToCart(product)">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+          <button>Buy Now</button>
+        </div>
+      }@else{
+        <p class="stock_sold">Item sold out..</p>
+      }
+    </div>
+  }
+</div>

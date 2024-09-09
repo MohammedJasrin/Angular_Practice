@@ -1,0 +1,70 @@
+<div class="flex flex-col items-start px-4 py-4 gap-2">
+  <h2>Add Product</h2>
+  <form class="border-2 border-blue-500 p-4 flex flex-col gap-2 " #productForm="ngForm" (ngSubmit)="addProduct(productForm)">
+
+      <div class="flex justify-between gap-2">
+        <label for="product_id">Id:</label>
+        <input type="text" name="product_id" class="border border-gray-400  pl-2 " [(ngModel)]="product.id" minlength="8" required #productid="ngModel">
+      </div>
+
+      @if(productid.invalid && productid.touched){
+        <div  class="bg-red-600 text-white p-1 rounded-md">
+          @if(productid.errors?.['required']){
+            <div class="text-sm ">Product id is required</div>
+          }
+          @if(productid.errors?.['minlength']){
+            <div class="text-sm ">ProductId must be atleast 8 characters long</div>
+          }
+        </div>
+      }
+
+      <div class="flex justify-between gap-2">
+        <label for="product_brand">Brand:</label>
+        <input  type="text" name="product_brand" class="border border-gray-400  pl-2 " [(ngModel)]="product.brand " required minlength="4" #productbrand="ngModel">
+      </div>
+      @if(productbrand.invalid && productbrand.touched){
+        <div class="bg-red-600 text-white rounded-md p-1">
+          @if(productbrand.errors?.['required']){
+            <div class="text-sm">Product brand is required</div>
+          }
+          @if(productbrand.errors?.['minlength']){
+            <div class="text-sm">ProductId must be atleast 4 characters long</div>
+          }
+        </div>
+      }
+
+      <div class="flex justify-between gap-2">
+        <label for="product_quantity">Quantity:</label>
+        <input type="number" name="product_quantity" class="border border-gray-400  pl-2 " [(ngModel)]="product.quantity" required min="1" #productquantity="ngModel">
+      </div>
+      @if(productquantity.invalid && productquantity.touched){
+        <div class="bg-red-600 text-white rounded-md p-1">
+          @if(productquantity.errors?.['required']){
+            <div class="text-sm">Product quantity is required</div>
+          }
+          @if(productquantity.errors?.['min']){
+            <div class="text-sm">product should have atleast 1 quantity</div>
+          }
+        </div>
+      }
+
+      <div class="flex justify-between gap-2">
+        <label for="product_price">Price:</label>
+        <input type="number" name="product_price" class="border border-gray-400  pl-2 " [(ngModel)]="product.price" required min="10" #productprice="ngModel" >
+      </div>
+      @if(productprice.invalid && productprice.touched){
+        <div class="bg-red-600 text-white rounded-md p-1">
+          @if(productprice.errors?.['required']){
+            <div class="text-sm">Product price is required</div>
+          }
+          @if(productprice.errors?.['min']){
+            <div class="text-sm">product price should be atleast 10</div>
+          }
+        </div>
+      }
+
+      <button type="submit" class="bg-green-200  p-1 rounded-md"  [disabled]="productForm.invalid" >Submit</button>
+
+
+  </form>
+</div>
